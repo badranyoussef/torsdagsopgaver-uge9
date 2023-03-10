@@ -14,7 +14,7 @@ class Main{
 			*/
 		ArrayList<String> actions = new ArrayList<>();
 
-		actions.add("1 .Start game");
+		actions.add("1. Start game");
 		actions.add("2. Start Resume game");
 		actions.add("3. Start Pause game");
 		actions.add("4. Start End game");
@@ -40,22 +40,21 @@ class Main{
 			String msg = "";
 
 			switch(action){
+				case(1):
+					msg = "Starting the game now";
+					break;
+				case(2):
+					msg = "Fetching previously saved game data";
+					break;
+				case(3):
+					msg = "Game paused";
+					break;
+				case(4):
+					msg = "End game";
+					break;
+				}
 
-			case(1):
-				msg = "Starting the game now";
-				break;
-			case(2):
-				msg = "Fetching previously saved game data";
-				break;
-			case(3):
-				msg = "Game paused";
-				break;
-			case(4):
-				msg = "End game";
-				break;
-			}
-
-			System.out.println(msg);
+					System.out.println(msg);
 		}
 
 }

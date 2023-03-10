@@ -18,17 +18,17 @@ public class GuessANumber {
 
 
     private static void makeAGuess(){
-		  // Create a Scanner object
+                // Create a Scanner object
         Scanner scan = new Scanner(System.in);
 
-    	   // Read user input
+                // Read user input
         System.out.println("Please type a number:");
-            //int input = scan.nextInt();    <-- if the input gets initialized here the termainl will ask for a number twice further down
+                //int input = scan.nextInt();    <-- if the input gets initialized here the termainl will ask for a number twice further down
 
             
-            // if so...
-            // if input was not numeric show an error message and call this method recursively
-            //use hasNextDouble to check if input is numeric, 
+                // if so...
+                // if input was not numeric show an error message and call this method recursively
+                //use hasNextDouble to check if input is numeric, 
         if(!scan.hasNextDouble()){
             System.out.println("You did not type a number");
             makeAGuess();
@@ -38,11 +38,13 @@ public class GuessANumber {
             int input = scan.nextInt();
             System.out.println("Bravo. You typed the number: "+input);
  
-                    //   Compare it with the random number
+                //   Compare it with the random number
             if(input == rnd_number){
 
                 System.out.println("You guessed right");
-            }else{
+
+
+                }else{
                     //   Let the user know the result of the comparison
                 System.out.println("You guessed wrong");
                 
@@ -52,7 +54,7 @@ public class GuessANumber {
                 }else if(input>rnd_number){
                     System.out.println("Your guess is higher than my number");
                 }
-                //   Let the user try again by calling this method recursively
+                    //   Let the user try again by calling this method recursively
                 makeAGuess();
 
             }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;	
+
 	//1.b Create an entity class called Team.
 class Team{
 
@@ -6,13 +8,15 @@ class Team{
 		//1.e Add yet another private instance variable to hold the names of players in the team.
 	private String teamName;
 	private int rank;
-	private String teamPlayers;
+	private ArrayList<String> teamPlayers;
 
 		//1.f Add a constructor with a parameter, so that the Team can be instantiated with
 		//a team name. Make sure the parameter value is assigned to the mathcing 
 		//instance variable.
 	public Team(String teamName){
 			this.teamName = teamName;
+			this.teamPlayers = new ArrayList<>();
+
 	}
 
 		//1.h In the Team class add a method called setRank that takes a number and assigns 
@@ -34,8 +38,20 @@ class Team{
 	return teamName;
 	}
 
+
+	public void addPlayer(String playerName){
+		teamPlayers.add(playerName);
+
+	}
+
 	public String toString(){
 		String s = "Team name: "+getTeamName()+" Rank: "+getRank();
+				// et for each loop for at tilføje spillere
+		for(String i: this.teamPlayers){
+				// "\n" for at skifte til næste linje
+			s+="\n" +i;
+		}
+		
 		return s;
 
 	}
